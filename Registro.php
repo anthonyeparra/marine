@@ -6,7 +6,6 @@
 
 ?>
 
-
 <body style="background-image: url(img/Animated\ Shape.svg); background-attachment: scroll">
     
         <br>
