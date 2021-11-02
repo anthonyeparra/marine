@@ -1,5 +1,7 @@
 <?php
-    // session_start(); 
+    // session_start();
+    // echo var_dump($_SESSION);
+
     // $nombre = $_SESSION['nombre'];
     // echo "aqui ". $nombre ."<br>" ;
     // echo  $_SESSION['active'];
@@ -12,7 +14,7 @@ echo '
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>        
+        </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -31,13 +33,13 @@ echo '
                 <!--Navbar text with an inline element-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle navbar-brand mb-0 h1" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       ' . $nombre . '
+                       ' . "ANTHONY" . '
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="salir.php">Cerrar sesión</a>
                       <!--<div class="dropdown-divider"></div>-->
                     </div>
-                </li>               
+                </li>
             </ul>
         </div>
     </nav>

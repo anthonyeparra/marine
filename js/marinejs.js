@@ -11,7 +11,7 @@ function inicioSesion(){
         data: { op: 1, usuario , password },
         dataType: 'json' ,
         success: function(r) {
-                console.log(r.error)
+                console.log("aqiu" + r.error)
                 if(r.error == 0){
                     console.log("entra al inicio de sesion")
                     window.location.href = "index.php";

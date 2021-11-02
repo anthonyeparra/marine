@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php 
-require_once "class/marine.php";
+// include "class/marine.php";
 //Variable de sesion
-session_start(); 
-// $nombre = $_SESSION['nombre'];
-//session_destroy();
+//echo $_SESSION['nombre'];
+//session_start(); 
+
+//  session_destroy();
 ?>
 <!-- Header -->
 <?php include 'head/head.php';?>
@@ -14,10 +15,11 @@ session_start();
 <body style="background-image: url(img/Animated\ Shape.svg); background-attachment: scroll">
     <!-- Navbar -->
     <?php include 'navbar/navbar.php';?>
-    <?php echo "<h1>".var_dump($_SESSION)."</h1>"?>
+    
 
     <!-- Pagina principal -->
     <br><br><br>
+    <?php session_start(); var_dump($_SESSION);?>
 
     <div class="container card col-md-10" style="border: 0;">
 
@@ -28,7 +30,7 @@ session_start();
                 </div>
             </div>
             <div class="col">
-                <h1 class="text-center text-uppercase" style="padding-top: 5rem;">Change Marine <?php echo $nombre; ?></h1>
+                <h1 class="text-center text-uppercase" style="padding-top: 5rem;">Change Marine <?php echo "ANTHONY"; ?></h1>
 
             </div>
         </div>

@@ -5,11 +5,11 @@ use classes\Service;
 
 $service = new Service('Marine');
 
-// if(!isset($_SESSION)){
-//     session_start();
-// }
+if(!isset($_SESSION)){
+    session_start();
+}
 
-// $usuario = $_SESSION['usuario'];
+$_SESSION['usuario']="anthony";
 
 // if ($usuario) {
 //     $id_usuario = $usuario->getUserId();
@@ -17,7 +17,7 @@ $service = new Service('Marine');
 //     $id_usuario = $_POST['usuario_id'];
 // }
 
-$op = 1;
+$op = $_POST['op'];
 
 if ($op) {
     //$serviceToken = $service->getToken();

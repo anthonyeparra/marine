@@ -1,5 +1,5 @@
 <?php
-require_once '../bd/conexion.php';
+require_once '../../bd/conexion.php';
 
 class Marine extends Conexion
 {
@@ -12,6 +12,7 @@ class Marine extends Conexion
 
     public function __construct()
     {
+        // session_start();
         //datos basicos
     //    $this->bd = new Conexion();
     }
@@ -19,26 +20,20 @@ class Marine extends Conexion
     {
         try 
         {
-            // 'usuario'=>$_POST['usuario'],
-            // 'password'=>md5($_POST["password"])
-            //        );
             $sqlConsulta="SELECT * FROM usuario WHERE correo='{$datos['usuario']}' AND password='{$datos['password']}'";
             $queryConsulta=Conexion::Conectar()->prepare($sqlConsulta);//Resolucion de ambito
             // $queryConsulta->bindParam(":correo",$datos['usuario'],PDO::PARAM_STR);
             // $queryConsulta->bindParam(":password",$datos['password'],PDO::PARAM_STR);
             $queryConsulta->execute();
             $numeroderegistro=$queryConsulta->rowCount();
+            $registro=$queryConsulta->fetch();
             
-            if($numeroderegistro > 0)
-            {
-                $registro=$queryConsulta->fetch();
-                session_start();
-                $_SESSION["id"]=$registro["id"];
-                $_SESSION["nombre"]=$registro["nombre"];
-                $_SESSION['active'] = true;
-            }
-            
-            return $numeroderegistro;
+        
+            $datos =[
+                "registro" => $registro,
+                "cantidad" => $numeroderegistro
+            ];
+            return $datos;
         } catch (\Throwable $th) {
             //throw $th;
         }

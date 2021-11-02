@@ -10,14 +10,21 @@ switch ($_POST['t']) {
          $password = addslashes(trim($_POST['password']));
          $datos = [
              "usuario" => $usuario,
-             "password" => $password
+             "password" => md5($password)
          ];
          $marine = new Marine();
          $resp = $marine->inciarSesion($datos);
-         if($resp == 1 ){
-            response($modulo, 'Marines-Modulo', $resp , 0);
+         if($resp["cantidad"] == 1 ){
+               if($resp["cantidad"] > 0)
+                { 
+                    session_start();
+                    $_SESSION["id"]=$resp["registro"]["id"];
+                    $_SESSION["nombre"]=$resp["registro"]["nombre"];
+                    $_SESSION['active'] = true;
+                }
+            response($modulo, 'Marines-Modulo', $resp["cantidad"] , 0);
          }else{
-            response($modulo, 'Marines-Modulo', $resp , 1);
+            response($modulo, 'Marines-Modulo', $resp["cantidad"] , 1);
          }
         break;
         default :

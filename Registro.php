@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'head.php';?>
+<?php include 'head.php';
+
+
+?>
+
 
 <body style="background-image: url(img/Animated\ Shape.svg); background-attachment: scroll">
     
