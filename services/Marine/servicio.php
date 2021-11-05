@@ -27,6 +27,31 @@ switch ($_POST['t']) {
             response($modulo, 'Marines-Modulo', $resp["cantidad"] , 1);
          }
         break;
+        case 'registroUsuarios':
+            $modulo = 'Registro de usuario';
+            $cedula = addslashes(trim($_POST['cedula']));
+            $nombre = addslashes(trim($_POST['nombre'])); 
+            $direccion = addslashes(trim($_POST['direccion'])); 
+            $celular = addslashes(trim($_POST['celular']));
+            $email = addslashes(trim($_POST['email']));
+            $password = addslashes(trim($_POST['password']));
+
+            $datos = [
+                "cedula" => $cedula,
+                "nombre" => $nombre,
+                "direccion" => $direccion,
+                "celular" => $celular,
+                "email" => $email,
+                "password" => md5($password)
+            ];
+            $marine = new Marine();
+            $resp = $marine->registroUsuarios($datos);
+            if($resp){
+               response($modulo, 'Marines-Modulo', $resp , 0);
+            }else{
+               response($modulo, 'Marines-Modulo', $resp , 1);
+            }
+           break;
         default :
             response("Defecto", 'Opcion Invalda', [], 1);
         break;

@@ -4,9 +4,10 @@
 // include "class/marine.php";
 //Variable de sesion
 //echo $_SESSION['nombre'];
-//session_start(); 
+// session_start(); 
+// echo $_SESSION['nombre'];
 
-//  session_destroy();
+// session_destroy();
 ?>
 <!-- Header -->
 <?php include 'head/head.php';?>

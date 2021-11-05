@@ -21,7 +21,7 @@ echo '
                     <a class="nav-link" href="index.php"> Inicio </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">  </a>
+                    <a class="nav-link" href="Registro.php">Registrar Usuario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Backup.php"> Copia de Seguridad </a>

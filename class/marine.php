@@ -38,4 +38,22 @@ class Marine extends Conexion
             //throw $th;
         }
     }
+    public function registroUsuarios($datos)
+    {
+        try 
+        {
+            $sql="CALL INSERTAR_TRATAMIENTO(:mtratamiento,:mcama,:mDiagnostico,:mGravedad,:mpaciente,:mmedico)";
+            $query=Conexion::conectar()->prepare($sql);//Resolucion de ambito
+            $query->bindParam(":mtratamiento",$datos['tratamiento'],PDO::PARAM_STR);
+            $query->bindParam(":mcama",$datos['cama'],PDO::PARAM_STR);
+            $query->bindParam(":mDiagnostico",$datos['diagnostico'],PDO::PARAM_STR);
+            $query->bindParam(":mGravedad",$datos['gravedad'],PDO::PARAM_STR);
+            $query->bindParam(":mpaciente",$datos['paciente'],PDO::PARAM_INT);
+            $query->bindParam(":mmedico",$datos['medico'],PDO::PARAM_INT);
+            return $query->execute();
+        
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }

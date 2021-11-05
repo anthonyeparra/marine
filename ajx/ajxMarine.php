@@ -9,7 +9,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$_SESSION['usuario']="anthony";
+// $_SESSION['usuario']="anthony";
 
 // if ($usuario) {
 //     $id_usuario = $usuario->getUserId();
@@ -31,6 +31,9 @@ if ($op) {
             case 1:
                 $t = 'inicioSesion';
                 break;
+            case 2:
+                $t = 'registroUsuarios';
+                break;  
             default:
                 $paso = false;
                 break;

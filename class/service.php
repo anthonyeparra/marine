@@ -11,14 +11,14 @@ class Service
 
     }
 
-    private function getUrl ($service_name)
+    public function getUrl ($service_name)
     {
         $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
         $port_local = (empty($_SERVER['SERVER_PORT']) ? '' : ':' . $_SERVER['SERVER_PORT']) ;
         $url_actual = $protocol . $_SERVER["SERVER_NAME"] . $port_local . $this->carpeta_actual;
 
         //obtener url actual
-        return $url_actual."/marina"."/services/$service_name/servicio.php";
+        return $url_actual."/marine"."/services/$service_name/servicio.php";
     }
 
     public function useService ($data)
